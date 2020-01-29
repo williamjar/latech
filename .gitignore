@@ -1,3 +1,4 @@
+# ignoring all auxilliary files created by Tex live
 *.log
 *.fls
 *.aux
