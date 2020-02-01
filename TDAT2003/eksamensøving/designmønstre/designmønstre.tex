@@ -33,6 +33,52 @@
             \item Polymorfisme / Mocking 
         \end{itemize}
 
+        \textbf{MiddleWare / Pipeline / Decorator / Wrapper}\par 
+        Et objekt likt interface som orginialen men som tillegger ekstra funksjonalitet
+        Sentralt i AOP
+        Legger typisk til generelle mekanismer som logg inn, sikkerhet.
+        \bigskip
+
+        \textbf{Adapter}\par
+        \begin{itemize}
+            \item Definerer et grensesnitt på et høyere nivå  som gjør det et subsystem
+            \item Service i ReactJS hvor vi legger kall i backed i en serviceclasse. 
+        \end{itemize}
+
+
+        \bigskip
+
+        \textbf{Repository, DAO}\par
+        \begin{itemize}
+            \item Definerer et grensesnitt på et høyere nivå  som gjør det et subsystem
+            \item per entitet i en domenemodell
+            \item kan kobmineres med DI
+        \end{itemize}
+        \bigskip
+        
+        \textbf{Singleton er en statisk klasse der du kan få tilgang til alt}
+        \bigskip
+
+        \textbf{MVC}\par
+        \begin{itemize}
+            \item Model holde data
+            \item View sørger for presentasjon
+            \item Controller utfører funksjonalitet
+        \end{itemize}
+        \bigskip
+
+
+        \bigskip
+
+        \textbf{Service / Facade}\par
+        \begin{itemize}
+            \item Et objekt som konverterer et grensesnitt til et annet
+            \item For eksempel eksterne systemer
+            \item Eller mot en database (DataAccessObject / Repository)
+        \end{itemize}
+
+
+        \bigskip
         \textbf{Coupling}
         \begin{itemize}
             \item Handler om hvor stor grad en modul har koblinger til, har kunnskap om eller avhenger av andre moduler.
@@ -55,7 +101,7 @@
             \item Dette er essensielt ved testing. Vi kan ikke alltid bruke reelle ressurser.
         \end{itemize}
 
-        \textbf{Dependency Injection IoC}'
+        \textbf{Dependency Injection IoC}
         \begin{itemize}
             \item I stedet for at et objekt oppretter sine avhengigheter selv, får de dem servert av klienten
             \item Med dependency injection blir avhengigheter tydliggjort i grensesnittet(interface). Det blir letter å forstå koden.
@@ -67,7 +113,13 @@
         \begin{itemize}
             \item Man kan bruke mock objekter for å etterligne reelle objekter
             \item crash test dummy
-            \item 
+            \item brukes om reelle objekter er upraktisk å bruke i en test
+            \item Mock-rammeverk: for å lage mock objekter raskt og effektivt
+            \item \begin{itemize}
+                \item Mockito
+                \item JMockit
+                \item PowerMock
+            \end{itemize}
         \end{itemize}
 
 
