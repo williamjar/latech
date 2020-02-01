@@ -1,0 +1,77 @@
+\documentclass{article}
+\title{TDD}
+\begin{document}
+    \begin{flushleft}
+
+        \section{TDD generelt}
+        Spesifikasjon: tester og krav og to sider av samme sak. Tester kan derfor beskrive krav og vi slipper to artefakter for samme sak. 
+        God, ren kode. Mye trygghet. \par 
+        \bigskip
+
+        \textbf{Motivasjon}\par 
+        \begin{itemize}
+            \item tester fungerer utmerket som kravdokumentasjon. I agil ånd gir det ikke mening å duplisere kravdokumentasjonen i både kravdok og Tester
+            \item en akseptansetest kan beslriver som scenarior i en user story og funger ebåde som funksjonell test og som kravdok. 
+            \item En enhetstest fungerer besdre som dokumentasjon av enn klasse enn javadoc(doc).
+            \item Viktig med detaljerte navn på testene.
+            \item God, ren kode.  
+            \item Bruk av DI tydeligjør avhengigheter, og muligjør mocking. Dette er nødvendig for tester som involverer eksterne systemer
+            \item testbar kode er ikke nyttig kun for testene sin skyld, fordi den fremtvinger løse koblinger og høy cohesion
+            \item Tester gir en viss trygghet for at koden gjør det den skal
+            \item Vi får kjørt koden med en gang
+        \end{itemize}
+
+        \bigskip
+        \textbf{Testing generelt}
+        \begin{itemize}
+            \item Vi tester programvare for å validere at systemet:
+            \item responderer riktig på alle typer input
+            \item yter godt
+            \item er brukervennlig
+            \item kan installeres i riktig miljø  
+            \item ikke brekker ved endringer
+        \end{itemize}
+        
+        \bigskip
+        \textbf{Tradisjonell vs smidig testing}
+        \begin{itemize}
+            \item Utviklere og testere jobber sammen
+            \item CI gjør versjonsforskjellene små
+            \item Dette gjør at det er mindre sannsynelig at det oppstår store feil
+            \item Risk poker for å identifisere risiko
+            \item Testnivåer
+            \item \begin{itemize}
+                \item System test: tregt og kostbart, tester fullt integrert system
+                \item Integration test: medium: tester større komponenter spiller bra sammen
+                \item Unit test: billig og rask: små enheter, ofte klassen, Junit. En del av byggeprosessen CI
+                \item og:
+                \item Akseptansetest: en type systemtestsom typisk utføres av kunden
+                \item Regresjonstest: skal sikre at systemet ikke brekker ved endringer
+                \item Smoke-testing: Uformell test, hvor man raskr prøver ut de viktigste delene av et system for å sjekke at alt henger på greip.
+                \item Utforskende testing: bruker kunnskap til å utføre kreativ testing
+                \item Destruktiv testing: selvforklarende.
+                \item Usability testing: teste om et system er lett å bruke. 
+                \item Ytelsetesting: handler om å finne ut hvor godt et system yter. Finne responstider osv.
+                \item Stabilitetstesting: Finne problemer som oppstr under korte perioder med høyt stressnivå
+            \end{itemize}
+        \end{itemize}
+
+        \section{Test first}
+        \begin{enumerate}
+            \item Write a test, watch it fail
+            \item Write just enough code to pass the test
+            \item Improve the code without changing its behaviour
+        \end{enumerate}
+
+        \section{CD}
+        \begin{itemize}
+            \item Bygge koden automatisk
+            \item Etter bygging så kjører alle testene
+            \item Gradle, Maven osv
+            \item GitLab CI med Docker(hvem som helst kan lage og publisere et Docker image som inkluderer en linux server med all software man trenger.)
+            \item yml fil
+            \item 
+        \end{itemize}
+
+    \end{flushleft}
+\end{document}

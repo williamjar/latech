@@ -1,0 +1,93 @@
+\documentclass{article}
+\title{Sikkerhet}
+\begin{document}
+    \begin{flushleft}
+
+        OWASP ble opprettet i 2001. Ikke-kommersiell, internasjonal organisasjon. Laget lista over 10 vanligste sårbarheter.
+        \section{A1 - injection }
+        Når en applikasjon kan ta imot ikke-validert brukerinput. Feks SQL-injection.\par
+        \textbf{Løsning:} Bruk et trygt API som paramatriserer input før spørring. Bruk prepared statement.
+        Validere alle input på siden.
+
+        \section{A2 - Broken Authentication and Session Management}
+        \begin{itemize}
+            \item Passord lagres i klartekst uten bruk av hashing
+            \item PAssord kan overskrives gjennom svak konto-administrasjon
+            \item Sesjonsid eksponeres i URL
+            \item Passord og sesjons id sendes ukryptert
+        \end{itemize}
+
+        \textbf{Løsning:} Ikke bygge egne rammeverk for autentisering og sesjonshåndtering. 
+
+        \section{A3 Cross-Site scripting (XSS)}
+        \emph{Vanligste sårbarheten i web apper}. Oppstår når en applikasjon viser frem data gitta av en bruker i en webside uten at dataen er validert(escapet).
+        Angripere kan få mulighet til å se skript  i en nettleser for å ta over sesjoner og omdirigere. 
+        \textbf{Løsning:} Escape brukerinput. Validere brukerinput. Ikke tillat avansert input. Validering fikser alle problemer med XSS for vanlig data.
+
+        \section{A4 Insecure Direct Object References}
+        Verifisere at bruker har tilgang til objektet i URLen. Feks. kontoid=123 i urlen bør kun kunne nås av bruker nr 123.
+
+        \textbf{Løsning:} Bruk indirekte objektreferanse. I stedet for å bruke databasenøkkel direkte, kan man bruke en indirekte referanse som kun gjelder sesjonen. 
+        Man kan lage en liste over ressurser den påloggede brukeren har tilgang til i sesjonen, og kun bruke indeksen som nøkkel i referansesne. Bruke mapping.
+        \par 
+        \bigskip
+        Sjekk aksess. For hver bruker av en objektrefreanse, sjekk om brukeren er autorisert for objektet.
+
+        \section{A5 Security Misconfiguration}
+        Feilkonfigurasjon kan skje mange steder i stacken. Er noe av programvaren utdatert?
+        \textbf{Løsning:} \begin{itemize}
+            \item Automatiser installasjon av nye miljøer for å fjerne muligheten for manuelle feil. 
+            \item Ha god prosess som sikrer at man bruker ny programvarenHa god applikasjonsarkitektur som skiller tydelig
+            \item Vurder periodiske sikkerthetsgjennomganger 
+        \end{itemize}
+
+        \section{A6 Sensetive Data Exposure}
+        Ikke kryptert sensitiv data. Hvis man feks har svake nøkler. 
+        \textbf{Løsning:}\begin{itemize}
+            \item Krypter all sensitiv data som lagres over tid i databaser eller loggfiler.
+            \item Bruk SSL(krypter alt som sendes ut)
+            \item Ikke ha sensetiv data i url
+            \item Ikke lagre sensitiv data du ikke trenger
+            \item Deaktiver autocomplete
+        \end{itemize}
+
+        \section{A7 Missing Function Level Access Control}
+        Applikasjoner beskytter ikek alltid funskjonene i systemet ordentlig. Feks om UI har linker til uautoriserte funksjoner.
+        Om det mangler API på serversiden for visse funksjoner?
+        \par 
+        \bigskip
+        \textbf{Løsning:}
+        \begin{itemize}
+            \item Lag mekaniskem for autoriserbar konfigurerbar, og lett og oppdatere, 
+            \item Implementere sjekker i business logic
+        \end{itemize}
+
+        \section{A8 Cross-Site Request Forgery}
+        En app tillater en bruker å sende tilstandsendrene requester. 
+        En angriper kan da konstruere en URL som feks overfører penger fra offerets konto. 
+        Hvis offeret besøker en spesiell side mens de er pålogget kan angriperen utløse en url.
+
+        \begin{itemize}
+            \item For å hindre CSRF angrep kan man bruke en uforutsigbar CSRF token enten i bodyen på requesten eller i urlen. 
+        \end{itemize}
+
+        \section{A9 Using Components with known Vulnerabilites}
+        Dette er et vanlig problem fordi utviklingsteam sjelden har fokus på å sikre at man bruker biblioteker. 
+        Mange vet ikke engang hvilke biblioteker man bruker. Om man bruker Maven eller feks NPM. \par 
+        \textbf{Løsning:}
+        Oppdatere biblioteker. Heartbeat bug i OpenSSL.
+
+
+        \section{A10 Unvalidated Redirects and Forwards}
+        Appenr sender ofte nettleseren videre fra en URL til en annen via redirect og forward. 
+        Hvis destinasjoner er baser på ikke validert brukerdata, vil en angriper kunne konstruere en url som sender nettleseren til en ekstern ondsinnet side.
+        Phishing.\par 
+
+        \textbf{Løsning:}
+        \begin{itemize}
+            \item Unngå å bruke redirect og forward
+            \item Ikke være avhengig av brukerdata
+        \end{itemize}
+
+    \end{flushleft}
+\end{document}
