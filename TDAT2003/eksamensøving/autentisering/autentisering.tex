@@ -1,4 +1,64 @@
 \documentclass{article}
+\title{Autentisering}
+
 \begin{document}
+\begin{flushleft}
+    \textbf{Single Sign-On}\par
+    Logger på en sentral påloggingstjeneste og får en \emph{token} tilbake. 
+    Kan bruke samme token om igjen for å slippe å logge inn igjen. \par 
+
+    \textbf{Autentisering i REST-tjenester}\par  
+    \begin{itemize}
+        \item Sesjonsbasert: enkelt, bruker servertilstand(ikke helt REST-ful), fungerer ikke over mange REST-tjenester(SSO)
+        \item Token-basert: kan brukes på mange tjenester(SSO), token må sendes i hvert kall (auth-header), krever sentralt register
+        \item Sertifikiat basert(signerte tokens), Rolls Royce, helt tilstandsløs(REST-ful), kan brukes på mange tjenester(SSO) 
+    \end{itemize}
+
+    \textbf{Express Middleware}
+    \begin{itemize}
+        \item /API
+        \item Noe usynlig du putter mellom to lag i en app.
+        \item I Express kan vi beskytte våre endepunkter med å innstalere en funksjon som kjører for vi får tilgang til endepunktene
+        \item Denne funksjonen kan avgjøre om vi skal få tilgang til endepunktene eller sende en feilmelding til klienten
+        \item Vi innstalerer en middleware-funksjon ved å bruke \emph{app.use("/thepath", enFunksjon)}.
+        \item Da vil enFunskjon kjøre for alle endepunktene som under samme path kan nås.
+    \end{itemize}
+
+    \section{Ulike autentiseringer}
+
+    \textbf{Tokenbasert (usignert)}
+    \begin{itemize}
+        \item Klient kaller REST, men brukernavn og passord
+        \item REST generer random Token og lagrer
+        \item Klient spør om funksjon med token i header 
+        \item Server sjekker token mot lagra og utfører funksjonen 
+    \end{itemize}
+
+    \textbf{Signaturbasert autentisert (JWT)}
+    \begin{itemize}
+        \item Klient kaller REST, men brukernavn og passord
+        \item Server lager en JWT med en henmmelighet og returnerer til klienten
+        \item Klient sender JWT i headeren til funksjonen til server 
+        \item Server sjekker JWT signatur, får brukerinfo fra denne, og responderer
     
+    \end{itemize}
+    Server slipper å lagre tokenet på serveren. Vi sjekker ikke mot database, vi sjekker bare om signatur er gyldig\par 
+    \bigskip 
+
+    \textbf{JWT (JSON Web Token)}\par 
+    Når vi lager JWT, lager vi en JSON. Vi fyller ut noen claims som (navn, value)par.
+    Disse navnene er reserverte feks. iss(issuer), exp(expiration), sub(subject), aud(audience).
+    Så signerer vi dette med et bibliotek, feks jasonwebtoken(node) ekker Java JWT som da generer en header og en signatur
+    Vi ender opp med en kodet streng i tre deler, separert med punktum. 
+
+
+    \section{OAuth2}
+
+    Åpen protokoll som gjør at vi som utvikler applikasjonen kan bruke påloggsfunksjonalititeten til en Identity provider,
+    feks, Google, Facebook, Twitter og mer.
+    OAuth2 bruker også signerete tokens som blir plassert i headeren. 
+    Kan bruke Passport i Node for å gjøre dette. 
+    
+
+\end{flushleft}    
 \end{document}

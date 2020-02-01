@@ -1,0 +1,75 @@
+\documentclass{article}
+\title{Designmønster}
+\begin{document}
+    \begin{flushleft}
+        \section{Hva er et designmønster?}
+        Systematisk gir navn, motiverer og forklarer et generelt design som hjelper et kjent design problem i objekt orienterte systemer. En løsning. \par 
+        \bigskip
+
+        \textbf{Antpattern}\par
+        \begin{itemize}
+            \item En ofte brukt men dårlig løsning på et designproblem
+            \item Systemutvikling er en gren i utvikling og tidligere gode design patterns kan over tid bli ansett som antipatterns
+            \item Singleton, et GoF, kan i noen ses på som et antipattern fordi det introduserer global tilstand. Gliobal tilstand er stort sett uønsket
+            \item Det er uenigheter
+        \end{itemize}
+
+        \textbf{Designmønstre}\par 
+        \begin{itemize}
+            \item Å ha kunnskap om designmønster gir oss mulighet til å snakke om kodedesign på en bedre måte, siden man relatere til eksisterende praksiser
+            \item Noen ganger bedre å bruke støtte i programmeringsårket
+            \item Angular bruker MVC(designmønster )
+        \end{itemize}
+
+        \textbf{Forskjellige designmønster}
+        \begin{itemize}
+            \item DAO / Repository
+            \item Middleware / Pipeline / Meditator
+            \item Service / Facade
+            \item Adapter / Listener
+            \item Observable / Listener
+            \item Dependency Injection / IoC 
+            \item Singleton 
+            \item Polymorfisme / Mocking 
+        \end{itemize}
+
+        \textbf{Coupling}
+        \begin{itemize}
+            \item Handler om hvor stor grad en modul har koblinger til, har kunnskap om eller avhenger av andre moduler.
+            \item Endring i moduler kan blir vanskelig for andre moduler.
+            \item Isolert sett blir en modul vanskeligere å forstå
+            \item Bedre med løse koblinger(færre konsekvenser, lettere å gjenbruke, lettere å teste)
+        \end{itemize}
+
+        \textbf{Cohesion}
+        \begin{itemize}
+            \item Hvor fokusert er en modul?
+            \item Har en modul en tydelig og avgrenset oppgave? 
+        \end{itemize}
+
+
+        \textbf{Polymorfisme}
+        \begin{itemize}
+            \item Separering av interface og implementasjon
+            \item Hvis vi seperarer en klasse i en interface og en eller flere implementasjoner kan velge blandt disse under kjøring
+            \item Dette er essensielt ved testing. Vi kan ikke alltid bruke reelle ressurser.
+        \end{itemize}
+
+        \textbf{Dependency Injection IoC}'
+        \begin{itemize}
+            \item I stedet for at et objekt oppretter sine avhengigheter selv, får de dem servert av klienten
+            \item Med dependency injection blir avhengigheter tydliggjort i grensesnittet(interface). Det blir letter å forstå koden.
+            \item Med DI blir alle injections laget i klienten, og sender dem nedover treet. 
+            \item SPRING og Angular er DI rammeverk
+        \end{itemize}
+
+        \textbf{Mocking}
+        \begin{itemize}
+            \item Man kan bruke mock objekter for å etterligne reelle objekter
+        \end{itemize}
+
+
+
+
+    \end{flushleft}
+\end{document}
