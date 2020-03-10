@@ -19,10 +19,10 @@
     \begin{enumerate}
         \item \[f(x + 2h) = f(x) + 2hf'(x) + 2h^2f''(x) + \frac{4}{3}h^3f'''(x)+ \frac{2}{3}n^4f''''(x) +O(n^6)\]
          \[f(x - 2h) = f(x) - 2hf'(x) + 2h^2f''(x) - \frac{4}{3}h^3f'''(x)+ \frac{2}{3}n^4f''''(x) +O(n^6)\]
-         \[f(x + h) = f(x) + hf'(x) + \frac{1}{2}h^2f''(x) + \frac{1}{6}h^3f'''(x)+ \frac{2}{3}n^4f''''(x) +O(n^6)\]
-         \[f(x - h) = f(x) - hf'(x) + \frac{1}{2}h^2f''(x) - \frac{1}{6}h^3f'''(x)+ \frac{2}{3}n^4f''''(x) +O(n^6)\]
+         \[f(x + h) = f(x) + hf'(x) + \frac{1}{2}h^2f''(x) + \frac{1}{6}h^3f'''(x)+ \frac{1}{24}n^4f''''(x) +O(n^6)\]
+         \[f(x - h) = f(x) - hf'(x) + \frac{1}{2}h^2f''(x) - \frac{1}{6}h^3f'''(x)+ \frac{1}{24}n^4f''''(x) +O(n^6)\]
         \item \[f(x + h) + f(x - h) + f(x + 2h) + f(x - 2h)\]
-        \item \[4f(x) + 5h^2f'''(x) + \frac{17}{12}h^4f''''(x)\]
+        \[= 4f(x) + 5h^2f'''(x) + \frac{17}{12}h^4f''''(x)\]
         \item \[f''(x)h = f(x - h) + f(x + h)\]
         \[= f(x) + hf'(x) + \frac{1}{2}h^2f''(x) + f(x) - hf'(x) + \frac{1}{2}h^2f''(x)\]
         \[= 2f(x) + h^2f''(x) + \frac{1}{2}h^4f''''(x)\]
@@ -32,13 +32,11 @@
         \[= -6f(x) + h^4f''''(x) + 5f(x - h) + 5f(x + h)\]
         \item \[f(x - 2h) + f(x - h) + f(x + h) + f(x + 2h) + 6f(x) - 5f(x - h) - 5f(x + h)\]
         
-
     \end{enumerate}
         
 
         
 
         
-
 
 \end{document}
