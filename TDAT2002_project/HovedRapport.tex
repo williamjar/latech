@@ -1,15 +1,27 @@
-\documentclass[11pt]{article}
-\title{Oppgave 1}
-\begin{document}
+\documentclass{article}
+\usepackage[norsk]{babel}
+\selectlanguage{norsk}
 
-        \section{Teori}
+\title{TDAT 2002 Matematikkprosjekt}
+\author{Irrasjonelle Karer}
+\date{Vår 2020}
+\newpage
+
+\begin{document}
+        \maketitle
+        \newpage
+        \tableofcontents
+        \newpage
+        
+        \section{Oppgave 1}
+        \subsection{Teori}
         Taylors formel med restledd:
         \[R_5(x)= \frac{f^{(6)}(c)} {6!}(x-x_0)^6\]
         \[EIy''''=f(x)\]
         \[y''''(x) \approx \frac{y(x - 2h)-4y(x - h)+ 6y(x) - 4y(x + h) + y(x + 2h)}{h^4}\]
-        \section{Oppgaveløsing}
+        \subsection{Oppgaveløsing}
     
-    \textbf{Oppgave 5.1.21}
+    \subsubsection{Oppgave 5.1.21}
     \begin{enumerate}
 
         \item \[f(x + 2h) = f(x) + 2hf'(x) + 2h^2f''(x) + \frac{4}{3}h^3f'''(x)+ \frac{2}{3}n^4f''''(x) +O(n^6)\]
@@ -32,19 +44,20 @@
         \[= -6f(x) + h^4f''''(x) + 5f(x - h) + 5f(x + h)\]
         \item \[f(x - 2h) + f(x - h) + f(x + h) + f(x + 2h) + 6f(x) - 5f(x - h) - 5f(x + h)\]
         \[f''''(x) = \frac{2(x-2h) - 4(x-h) + 6f(x) - 4(x+h) + f(x+h)} {h^4} = O(n^2)\]
-        
     \end{enumerate}
 
-    \textbf{Oppgave 5.1.22a}
-
+    \subsubsection{Oppgave 5.1.22a}
     \[f(x) = f'(x) = 0\]
     then
     \[f''''(x+h) - \frac{16f(x+h) - 9f(x+2h) + \frac{8}{3}f(x+3h)-\frac{1}{4}f(x+4h)}{h^4}=O(h^2)\]
-
-    \[f(x-h)=f(x)-hf'(x) + \frac{1}{2}h^2f''(x)-\frac{1}{6}h^3f'''(x)+\frac{1}{24}h^4f''''(x)\]
-    \[f''''(x-h) = f''''(x) + f^{(5)}(x) + \frac{1}{2}h^2f^{(6)}(x)+\frac{1}{6}h^3f^{(7)}(x)+\frac{1}{24}h^4f^{(8)}(x)\]
-    \[f(x+h)\]
     \begin{enumerate}
+    \item \[f(x-h)=f(x)-hf'(x) + \frac{1}{2}h^2f''(x)-\frac{1}{6}h^3f'''(x)+\frac{1}{24}h^4f''''(x)\]
+    \[f''''(x-h) = f''''(x) + f^{(5)}(x) + \frac{1}{2}h^2f^{(6)}(x)+\frac{1}{6}h^3f^{(7)}(x)+\frac{1}{24}h^4f^{(8)}(x)\]
+    \[f(x+h) = f(x)+hf(x) + \frac{1}{2}h^2f''(x)+\frac{1}{6}h^3f'''(x)+\frac{1}{24}h^4f''''(x)\]
+    \[f(x+2h)=f(x)+2hf'(x)+2h^2f''(x)+\frac{4}{3}h^3f'''(x)+\frac{2}{3}h^4f''''(x)\]
+    \[f(x+3h)=f(x) + 3hf'(x) + \frac{9}{2}h^2f''''(x)\frac{9}{2}h^3f'''(x)+\frac{27}{8}h^4f''''(x) + \frac{81h^5f^{(5)}(x)}{40}\]
+    \[f(x+3h) = f(x)+4hf'(x)+8h^2f''(x) + \frac{32}{3}h^3f'''(x) + \frac{32}{3}h^4f''''(x) + \frac{128h^5f^{(5)}(x)}{15}\]
+    
     \item  \[f''''(x-h) = f''''(x) + f^{(5)}(x) + O(h^2)\]
     \item \[f''''(x) + f^{(5)} + O(h^2)-\]
     \[16(\frac{1}{2}h^2f''(x))+\frac{1}{6}h^3f'''(x)+\frac{1}{24}h^4f''''(x)+\frac{1}{120}h^5f^{(5)}(x)+O(h^6))\]
@@ -57,13 +70,21 @@
 
     \begin{flushleft}
         
-   
     $\frac{f''''(x) + f^{(5)}(x) + O(h^2) - (8-18+12-2)h^2f''(x)+(\frac{8}{3}+12-12-\frac{8}{3})f'''(x) + (\frac{2}{3}-6+9-\frac{8}{3}) f''''(x)+(\frac{2}{15}-\frac{12}{5}+\frac{21}{5} - \frac{32}{15})f^{(5)}(x)}{h^4}$
-    
     $= f''''(x)+f^{(5)}(x)+O(h^2) - f''''(x) - f^{(5)}(x) = O(h^2)$
-    
-    
     \end{flushleft}
+
+    \section{Oppgave 2}
+
+    \section{Oppgave 3}
+
+    \section{Oppgave 4}
+
+    \section{Oppgave 5}
+
+    \section{Oppgave 6}
+
+    \section{Oppgave 7}
 
     
    
