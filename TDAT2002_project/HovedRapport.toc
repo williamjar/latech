@@ -8,6 +8,10 @@
 \contentsline {section}{\numberline {2}Oppgave 2}{5}%
 \contentsline {section}{\numberline {3}Oppgave 3}{5}%
 \contentsline {section}{\numberline {4}Oppgave 4}{5}%
-\contentsline {section}{\numberline {5}Oppgave 5}{5}%
-\contentsline {section}{\numberline {6}Oppgave 6}{5}%
-\contentsline {section}{\numberline {7}Oppgave 7}{5}%
+\contentsline {subsection}{\numberline {4.1}Teori}{5}%
+\contentsline {subsection}{\numberline {4.2}Oppgaveløsing}{5}%
+\contentsline {subsubsection}{\numberline {4.2.1}a}{5}%
+\contentsline {subsubsection}{\numberline {4.2.2}b}{5}%
+\contentsline {section}{\numberline {5}Oppgave 5}{6}%
+\contentsline {section}{\numberline {6}Oppgave 6}{6}%
+\contentsline {section}{\numberline {7}Oppgave 7}{6}%
